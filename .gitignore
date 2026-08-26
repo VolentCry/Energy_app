@@ -1,0 +1,6 @@
+__pycache__/
+.flet/
+.venv/
+build/
+
+collection.json
