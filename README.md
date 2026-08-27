@@ -1,7 +1,7 @@
 [🇷🇺 Русский](#русский)
 ---
 
-<a name="english"></a>
+<a name="russian"></a>
 # Energy Drink Collection Manager
 A cross-platform Flet application for tracking, cataloging, and analyzing an energy drink collection.
 
