@@ -1,7 +1,6 @@
-[🇬🇧 English](#english)
+[🇬🇧 English](README.md)
 ---
 
-<a name="русский"></a>
 # Energy Drink Collection Manager
 Кроссплатформенное приложение на Flet для учета, каталогизации и анализа коллекции энергетических напитков.
 
@@ -21,7 +20,7 @@
 
 ## Установка и запуск
 ```bash
-git clone https://github.com/your-username/energy-drink-manager.git
+git clone [https://github.com/your-username/energy-drink-manager.git](https://github.com/your-username/energy-drink-manager.git)
 cd energy-drink-manager
 pip install flet openpyxl
 python main.py
