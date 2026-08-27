@@ -278,17 +278,25 @@ class CollectionScreen(ft.Column):
         )
         self.filtered_items: list[dict[str, Any]] = []
         self.visible_count = COLLECTION_PAGE_SIZE
+        
         super().__init__(expand=True, spacing=8, controls=[
+            # Контейнер для строки поиска и фильтра
             ft.Container(
-                height=96,
-                padding=ft.Padding.only(left=12, right=12, top=12),
-                content=ft.Row([
-                    self.search,
-                    self.sort,
-                ], spacing=8),
+                # Убираем height=96, используем симметричные отступы, чтобы центрировать контент
+                padding=ft.Padding.symmetric(horizontal=12, vertical=12),
+                content=ft.Row(
+                    [
+                        self.search,
+                        self.sort,
+                    ], 
+                    spacing=8,
+                    # Выравниваем элементы по вертикальной оси по центру
+                    vertical_alignment=ft.CrossAxisAlignment.CENTER,
+                ),
             ),
             self.list_view if self.app.preferences.display == "list" else self.grid_view,
         ])
+
         self.refresh()
 
     def refresh(self, _e: Any = None) -> None:
@@ -538,7 +546,6 @@ class StatsScreen(ft.Column):
         ]
         metric_cells = [ft.Container(expand=1, height=100, content=card) for card in metrics]
         self.controls = [
-            ft.Container(padding=ft.Padding.only(left=12, top=14), content=ft.Text("Обзор коллекции", size=22, weight=ft.FontWeight.BOLD)),
             ft.Row(metric_cells[:2], spacing=8),
             ft.Row(metric_cells[2:], spacing=8),
             ft.Card(content=ft.Container(padding=16, content=ft.Column([
@@ -760,7 +767,6 @@ class SettingsScreen(ft.Column):
         self.file_picker = ft.FilePicker()
         app.page.services.append(self.file_picker)
         top_content = ft.Column([
-            ft.Container(padding=ft.Padding.only(left=24, right=24, top=14), content=ft.Text("Настройки", size=22, weight=ft.FontWeight.BOLD)),
             ft.Card(content=ft.Container(padding=ft.Padding.symmetric(horizontal=24, vertical=14), content=ft.Row([
                 ft.Text("Светлая тема", expand=True),
                 self.dark_switch,
@@ -787,7 +793,7 @@ class SettingsScreen(ft.Column):
                     alignment=ft.Alignment.CENTER,
                     padding=ft.Padding.only(left=24, right=24, bottom=24),
                     content=ft.Text(
-                        "Данные хранятся в каталоге приложения.",
+                        "Данные хранятся в каталоге приложения. Для резервного копирования используйте экспорт в JSON. То же самое сделаете перед удалением приложения",
                         size=11,
                         text_align=ft.TextAlign.CENTER,
                         color=ft.Colors.with_opacity(0.55, ft.Colors.ON_SURFACE),
@@ -1105,4 +1111,4 @@ async def main(page: ft.Page) -> None:
 
 
 if __name__ == "__main__":
-    ft.run(main)
+    ft.app(main, view=ft.AppView.WEB_BROWSER)

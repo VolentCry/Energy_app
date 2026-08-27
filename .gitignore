@@ -3,4 +3,5 @@ __pycache__/
 .venv/
 build/
 
-collection.json
+*.json
+*.jks
