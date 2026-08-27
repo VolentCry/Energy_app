@@ -1,11 +1,10 @@
-[🇷🇺 Русский](#русский)
+[🇷🇺 Русский](README.ru.md)
 ---
 
-<a name="english"></a>
 # Energy Drink Collection Manager
 A cross-platform Flet application for tracking, cataloging, and analyzing an energy drink collection.
 
-## Основные возможности
+## Key Features
 - **Collection management:** list view, quick search, sorting by brand, price, and rating, detailed item card, swipe to delete an entry.
 - **Beverage details:** recording the ingredients (caffeine, taurine, sugar), volume, price, and place of purchase; personal rating; selecting a custom card color; and attaching photos.
 - **Flexible field configuration:** enabling/disabling standard parameters and creating custom fields.
@@ -17,14 +16,11 @@ A cross-platform Flet application for tracking, cataloging, and analyzing an ene
 ## Technology Stack
 - Python 3.14.7
 - Flet 0.86.5 (UI)
-- openpyxl 3.1.5 (парсинг Excel)
+- openpyxl 3.1.5 (Excel parsing)
 
 ## Installation and Launch
 ```bash
-git clone https://github.com/your-username/energy-drink-manager.git
+git clone [https://github.com/your-username/energy-drink-manager.git](https://github.com/your-username/energy-drink-manager.git)
 cd energy-drink-manager
 pip install flet openpyxl
 python main.py
-```
-
-***P.S.** The project was created as a quick, practical solution to a specific "here-and-now" task and makes no claim to refined aesthetics or complex architectural solutions.*
