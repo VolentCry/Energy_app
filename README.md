@@ -24,3 +24,6 @@ git clone [https://github.com/your-username/energy-drink-manager.git](https://gi
 cd energy-drink-manager
 pip install flet openpyxl
 python main.py
+```
+
+***P.S.*** *The project was created as a quick, practical solution to a specific "here-and-now" task and makes no claim to refined aesthetics or complex architectural solutions.*
